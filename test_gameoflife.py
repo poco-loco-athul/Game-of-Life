@@ -37,7 +37,7 @@ def test_apply_rules():
     result =  [ [False, False, False],
                 [False, True, False],
                 [False, False, False]]
-    assert gameoflife.apply_rules(grid, neighbours,3,3) == result
+    assert gameoflife.apply_rules(grid, neighbours) == result
 
     grid =  [ [False, True, True],
               [True, True, False],
@@ -48,14 +48,13 @@ def test_apply_rules():
     result =  [ [True, True, True],
                 [True, False, False],
                 [True, True, False]]
-    assert gameoflife.apply_rules(grid, neighbours,3,3) == result
+    assert gameoflife.apply_rules(grid, neighbours) == result
 
 
 def test_display():
     grid = [ [False, True],
              [True, False] ]
-    dsply =""". *
-* ."""
+    dsply ="\t\n. O \t\nO . "
     assert gameoflife.display(grid) == dsply
     
     

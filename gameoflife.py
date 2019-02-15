@@ -13,7 +13,7 @@ def neighbour_finder(grid):
     cols = len(grid[0])
 
     result = [[None for i in range(rows)] for j in range(cols)]
-
+    
     for i in range(rows):
         for j in range(cols):
             count = 0
@@ -50,7 +50,10 @@ def neighbour_finder(grid):
     return result
 
 
-def apply_rules(grd,neighbour,rows,cols):
+def apply_rules(grd,neighbour):
+    rows = len(grd)
+    cols = len(grd[0])    
+    "Applies Coway's rules and produces next generation"
     for i in range(rows):
         for j in range(cols):
             if grd[i][j]:
@@ -62,3 +65,16 @@ def apply_rules(grd,neighbour,rows,cols):
     return grd
 
                     
+def display(grd):
+    rows = len(grd)
+    cols = len(grd[0])    
+    "Displays given grid(matrix) as string"
+    formatter = ""
+    for i in range(rows):
+        formatter += "\t\n"
+        for j in range(cols):
+            if grd[i][j]:
+                formatter += "O "
+            else:
+                formatter += ". "
+    return formatter
