@@ -48,6 +48,25 @@ def test_rule_one():
                 [False, False, False],
                 [False, False, False]]
     assert gameoflife.rule_one(grid, neighbours,3,3) == result
+
+def test_rule_three():
+    grid =  [ [True, True],
+              [True, True] ]
+    neighbours = [ [3,3],
+                   [3,3] ]
+    result =  [ [False, False],
+                [False, False] ]
+    assert gameoflife.rule_three(grid, neighbours,2,2) == result
     
+    grid =  [ [False, True, True],
+              [True, True, False],
+              [False, True, False]]
+    neighbours = [ [3,3,2],
+                   [3,4,4],
+                   [3,2,2]]
+    result =  [ [False, True, True],
+                [True, False, False],
+                [False, True, False]]
+    assert gameoflife.rule_three(grid, neighbours,3,3) == result
     
 
