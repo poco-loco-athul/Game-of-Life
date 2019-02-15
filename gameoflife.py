@@ -2,7 +2,7 @@
 
 def existential_check(a,b,row,col): 
     "Checks whether the calling neighbour(a,b) exists or not"
-    if a in range(row+1) and b in range(col+1):    
+    if a in range(row) and b in range(col):    
         return True
     else:
         return False
@@ -12,7 +12,7 @@ def neighbour_finder(grid):
     rows = len(grid)
     cols = len(grid[0])
 
-    result = [ [ [0] ]*cols ]*rows
+    result = [[None for i in range(rows)] for j in range(cols)]
 
     for i in range(rows):
         for j in range(cols):

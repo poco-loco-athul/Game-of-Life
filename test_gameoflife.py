@@ -9,7 +9,7 @@ def test_existential_check():
     n, m = -1,1
     assert gameoflife.existential_check(n,m,row,col) == False
     # when n and m are in index
-    n, m = 1,2
+    n, m = 1,1
     assert gameoflife.existential_check(n,m,row,col) == True
 
 
