@@ -18,6 +18,11 @@ def test_neighbour_finder():
                        [True, False] ]
     result =  [ [2,1],
                 [1,2] ]
-
     assert gameoflife.neighbour_finder(neighbour_hood) == result
+
+    neighbour_hood = [ [False, True, False],
+                       [True, False, False],
+                       [True, False, True] ]
+    result =  [ [2,1,1],[2,4,2],[1,3,0] ]
+    assert gameoflife.neighbour_finder(neighbour_hood) == result          
 
