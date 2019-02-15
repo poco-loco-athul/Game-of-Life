@@ -49,5 +49,15 @@ def test_apply_rules():
                 [True, False, False],
                 [True, True, False]]
     assert gameoflife.apply_rules(grid, neighbours,3,3) == result
+
+
+def test_display():
+    grid = [ [False, True],
+             [True, False] ]
+    dsply =""". *
+* ."""
+    assert gameoflife.display(grid) == dsply
+    
+    
     
 
