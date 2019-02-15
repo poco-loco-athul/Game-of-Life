@@ -50,19 +50,12 @@ def neighbour_finder(grid):
     return result
 
 
-def rule_one(grd,neighb,rows,cols):
+def rule_two(grd,neighb,rows,cols):
     for i in range(rows):
         for j in range(cols):
             if grd[i][j]:
-                if neighb[i][j] < 2:
+                if neighb[i][j] not in range(2,4):
                     grd[i][j] = False
     return grd
 
-def rule_three(grd,neighb,rows,cols):
-    for i in range(rows):
-        for j in range(cols):
-            if grd[i][j]:
-                if neighb[i][j] > 3:
-                    grd[i][j] = False
-    return grd
                     

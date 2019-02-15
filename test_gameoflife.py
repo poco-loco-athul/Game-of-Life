@@ -29,15 +29,7 @@ def test_neighbour_finder():
 
 
 #Test for rules:
-def test_rule_one():
-    grid =  [ [True, False],
-              [False, False] ]
-    neighbours = [ [0,1],
-                   [1,1] ]
-    result =  [ [False, False],
-                [False, False] ]
-    assert gameoflife.rule_one(grid, neighbours,2,2) == result
-    
+def test_rule_two():
     grid =  [ [False, False, True],
               [True, False, False],
               [False, True, False]]
@@ -47,17 +39,8 @@ def test_rule_one():
     result =  [ [False, False, False],
                 [False, False, False],
                 [False, False, False]]
-    assert gameoflife.rule_one(grid, neighbours,3,3) == result
+    assert gameoflife.rule_two(grid, neighbours,3,3) == result
 
-def test_rule_three():
-    grid =  [ [True, True],
-              [True, True] ]
-    neighbours = [ [3,3],
-                   [3,3] ]
-    result =  [ [False, False],
-                [False, False] ]
-    assert gameoflife.rule_three(grid, neighbours,2,2) == result
-    
     grid =  [ [False, True, True],
               [True, True, False],
               [False, True, False]]
@@ -67,6 +50,6 @@ def test_rule_three():
     result =  [ [False, True, True],
                 [True, False, False],
                 [False, True, False]]
-    assert gameoflife.rule_three(grid, neighbours,3,3) == result
+    assert gameoflife.rule_two(grid, neighbours,3,3) == result
     
 
