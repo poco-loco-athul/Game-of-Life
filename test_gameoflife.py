@@ -36,6 +36,18 @@ def test_rule_one():
                    [1,1] ]
     result =  [ [False, False],
                 [False, False] ]
-    assert gameoflife.rule_one(grid, neighbours) == result
+    assert gameoflife.rule_one(grid, neighbours,2,2) == result
+    
+    grid =  [ [False, False, True],
+              [True, False, False],
+              [False, True, False]]
+    neighbours = [ [1,2,0],
+                   [1,3,2],
+                   [2,1,1]]
+    result =  [ [False, False, False],
+                [False, False, False],
+                [False, False, False]]
+    assert gameoflife.rule_one(grid, neighbours,3,3) == result
+    
     
 
