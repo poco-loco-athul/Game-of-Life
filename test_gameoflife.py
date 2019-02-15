@@ -24,5 +24,18 @@ def test_neighbour_finder():
                        [True, False, False],
                        [True, False, True] ]
     result =  [ [2,1,1],[2,4,2],[1,3,0] ]
-    assert gameoflife.neighbour_finder(neighbour_hood) == result          
+    assert gameoflife.neighbour_finder(neighbour_hood) == result
+
+
+
+#Test for rules:
+def test_rule_one():
+    grid =  [ [True, False],
+              [False, False] ]
+    neighbours = [ [0,1],
+                   [1,1] ]
+    result =  [ [False, False],
+                [False, False] ]
+    assert gameoflife.rule_one(grid, neighbours) == result
+    
 
