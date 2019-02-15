@@ -57,4 +57,12 @@ def rule_one(grd,neighb,rows,cols):
                 if neighb[i][j] < 2:
                     grd[i][j] = False
     return grd
+
+def rule_three(grd,neighb,rows,cols):
+    for i in range(rows):
+        for j in range(cols):
+            if grd[i][j]:
+                if neighb[i][j] > 3:
+                    grd[i][j] = False
+    return grd
                     
