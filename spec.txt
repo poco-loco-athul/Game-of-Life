@@ -6,8 +6,6 @@ B. Checks how many alive neighbors are there for each cells
 C. Apply rule and change status of all cell at same time.
 D. Go back to step A
 
-
-
 STEP B:
 Neighbours of cell(i,j):
 | i-1, j-1 | i-1, j | i-1, j+1 |
@@ -16,8 +14,6 @@ Neighbours of cell(i,j):
 
 existential check:
 Given i and j, neighbour shouldn't have negative index or index greater than size of matrix
-
-
 
 STEP C:
 Rules:
@@ -30,4 +26,15 @@ Rules:
 |    1 | True   | <2        | False  |
 |    2 | True   | 2,3       | True   |
 |    3 | True   | 3<        | False  |
-|    4 | False  | 3         | True   | 
+|    4 | False  | 3         | True   |
+
+
+
+
+
+RLE support spec:
+
+A. RLE_to_string	 : Changes RLE format to readable string with True and False
+B. string_to_matrix	 : Changes string to matrix with Boolean values
+C. expand_matrix	 : RLE files are designed to work in infinite grid. To make it compatible we expands the matrix
+D. f_mtrx		 : Dead cells at the end of a RLE pattern line do not need to be encoded, so it has to be filled False
