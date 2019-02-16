@@ -1,5 +1,25 @@
 Game of life specs:
 
+Process:
+A. Print the intial state as a string
+B. Checks how many alive neighbors are there for each cells
+C. Apply rule and change status of all cell at same time.
+D. Go back to step A
+
+
+
+STEP B:
+Neighbours of cell(i,j):
+| i-1, j-1 | i-1, j | i-1, j+1 |
+| i  , j-1 | i  , j | i  , j+1 |
+| i+1, j-1 | i+1, j | i+1, j+1 |
+
+existential check:
+Given i and j, neighbour shouldn't have negative index or index greater than size of matrix
+
+
+
+STEP C:
 Rules:
 1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
 2. Any live cell with two or three live neighbors lives on to the next generation.
@@ -11,19 +31,3 @@ Rules:
 |    2 | True   | 2,3       | True   |
 |    3 | True   | 3<        | False  |
 |    4 | False  | 3         | True   | 
-
-
-A. Checks how many neighbors are there.
-B. Apply rule and change status of all cell at same time.
-C. Go back to step A
-
-
-  
-Neighbours:
-| i-1, j-1 | i-1, j | i-1, j+1 |
-| i  , j-1 | i  , j | i  , j+1 |
-| i+1, j-1 | i+1, j | i+1, j+1 |
-
-existential check:
-Given i and j, neighbour shouldn't have negative index or index greater than size of matrix
-
