@@ -23,6 +23,11 @@ import RLEsupport
 rle = "b3o2b2o3b$b2obobob3o$b3o2b5o$obobobobobo$4obobobob$4b3o4b$bobobob4o$obobobobobo$5o2b3ob$3obobob2ob$3b2o2b3o!"
 x,y = 11, 11
 
+# 6. Decapole (Oscillator)
+rle = "11b2o$10bobo2$8bobo2$6bobo2$4bobo2$2bobo2$obo$2o!"
+x,y = 13,13
+
+
 
 grid = RLEsupport.decode(rle,x,y)
 try:
