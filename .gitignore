@@ -1,3 +1,4 @@
 *.txt~
 *.py~
 __pycache__
+.coverage
