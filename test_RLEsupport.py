@@ -44,3 +44,20 @@ def test_fill_matrix():
             [False, False, False, False, False, False, False, False]]
     assert RLEsupport.fill_matrix(value,x,y) == rslt
     
+
+
+def test_decode():
+    RLE_value ="2b3o3b3o2b2$o4bobo4bo"
+    x, y = 3, 13
+    rst = [[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+           [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+           [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+           [False, False, False, False, False, True, True, True, False, False, False, True, True, True, False, False, False, False, False],
+           [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+           [False, False, False, True, False, False, False, False, True, False, True, False, False, False, False, True, False, False, False],
+           [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+           [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+           [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]]
+    assert RLEsupport.decode(RLE_value, x, y) == rst
+
+    

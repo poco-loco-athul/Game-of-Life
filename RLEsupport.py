@@ -1,4 +1,3 @@
-
 def RLE_to_string(value):
     "Decodes RLE into readable string format"
     number = []
@@ -17,8 +16,8 @@ def RLE_to_string(value):
             if i == "o":
                 output += "True "*int(n)
             if i == "$":
-                #empty line
                 if n.isnumeric():
+                    #empty line
                     for j in range(int(n)-1):
                         output += ";False "
                 output += ";"
@@ -66,5 +65,10 @@ def fill_matrix(mat,x,y,m=3,n=3):
     return mat
 
 
-def decode(value):
-    pass
+def decode(RLE, x, y, m=3, n=3):
+    "Decodes RLE value into matrix"
+    strg = RLE_to_string(RLE)
+    mtrx = string_to_matrix(strg)
+    e_mtrx = expand_matrix(mtrx, m=m, n=n)
+    f_mtrx = fill_matrix(e_mtrx, x=x, y=y, m=m, n=n)
+    return f_mtrx
