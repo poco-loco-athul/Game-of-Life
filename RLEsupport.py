@@ -25,6 +25,7 @@ def RLE_to_string(value):
             number = []
     return output.strip()
 
+
 def string_to_matrix(string):
     "Converts string into matrix with boolean values"
     boolDict = { 'True' : True, 'False' : False }
@@ -37,3 +38,18 @@ def string_to_matrix(string):
             submatrix.append(boolDict[i])
         matrix.append(submatrix)
     return matrix
+
+
+def expand_matrix(matrix,m=3, n=3):
+    "RLE files are designed to work in infinite grid. To make compatible we expands the matrix"
+    # adding m cols and n rows on both sides
+    row = len(matrix)
+    
+    for i in range(m):
+        for i in range(row):
+            matrix[i].insert(0, False)
+    for j in range(n):
+        matrix.insert(0,[False])
+    return matrix
+            
+    
