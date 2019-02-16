@@ -1,7 +1,4 @@
 # Conway's Game of Life
-#
-# Initial configuration for game of life given through a matrix. Each element in the matrix is defined as a cell.
-
 
 def existential_check(a,b,row,col): 
     "Checks whether the calling cell(a,b) exists or not. This helps neighbour_finder() stay inside the given matrix. "
@@ -12,7 +9,7 @@ def existential_check(a,b,row,col):
     
 
 def neighbour_finder(grid):
-    "neighbour_finder() finds number of alive cells for each cells (dead or alive)"
+    "neighbour_finder() finds number of neighbouring alive cells for each cell"
     rows = len(grid)
     cols = len(grid[0])
 
@@ -56,7 +53,7 @@ def neighbour_finder(grid):
 
 
 def apply_rules(grd,neighbour):
-    "Applies Coway's rules and produces next generation"
+    "Applies Conway's rules and produces next generation"
     rows = len(grd)
     cols = len(grd[0])    
     for i in range(rows):
