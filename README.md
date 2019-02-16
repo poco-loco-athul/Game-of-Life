@@ -15,8 +15,12 @@ To run [blinker](http://www.conwaylife.com/wiki/Blinker) configuration:
 ```bash
 $ python blinker.py
 ```
+ConwayLife.com have a very good collection of [patterns](http://www.conwaylife.com/wiki/Category:Patterns). The [RLE](http://www.conwaylife.com/wiki/RLE)(Run Length Encoded) file format is commonly used for storing large patterns. RLE can decode by functions in `RLEsupport.py`. Examples are given in 'other_configuration.py`
+```bash
+$ python other_configuration.py
+```
 
-To run your own configurations change the intial state in `try_ur_configuration.py`
+To run your own configurations change the initial state in `try_ur_configuration.py`
 
 End program using a keyboard interrupt (ctrl-c).
 
@@ -34,13 +38,16 @@ Check `requirements.txt` for other dependencies
 Tests
 ======
 This project is developed through Test Driven Development.
-
-* `test_gameoflife.py` contains tests for `gameoflife`. You can run the tests after installing requirements. To test:
+Once required dependencies are there, tests can run. To test:
 ```bash
 pytest test_gameoflife
 ```
-`gameoflife` have 100% coverage by tests in `test_gameoflife`. To check coverage:
+To check coverage of these tests:
 ```bash
 pytest --cov=gameoflfe
+```
+
+* `test_gameoflife.py` contains tests for `gameoflife`. It has 100% coverage.
+* `test_RLEsupport.py` contains tests for `RLEsupport`. It has 100% coverage.
 
 
