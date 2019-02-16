@@ -24,8 +24,14 @@ rle = "b3o2b2o3b$b2obobob3o$b3o2b5o$obobobobobo$4obobobob$4b3o4b$bobobob4o$obobo
 x,y = 11, 11
 
 # 6. Decapole (Oscillator)
-rle = "11b2o$10bobo2$8bobo2$6bobo2$4bobo2$2bobo2$obo$2o!"
-x,y = 13,13
+# rle = "11b2o$10bobo2$8bobo2$6bobo2$4bobo2$2bobo2$obo$2o!"
+# x,y = 13,13
+
+# 7. Pentadecathlon (Oscillator)(Period=15)
+rle ="2bo4bo2b$2ob4ob2o$2bo4bo!"
+x = 10
+y = 3
+
 
 
 
