@@ -22,15 +22,17 @@ def test_string_to_matrix():
 def test_expand_matrix():
     val =  [[True, False],[True, False]]
     result = [[False],[False],[False],
-            [False, False, False, True, False],
-            [False, False, False, True, False]]
+              [False, False, False, True, False],
+              [False, False, False, True, False],
+              [False],[False],[False]]
     assert RLEsupport.expand_matrix(val) == result
     
     
 def test_fill_matrix():
     value =   [[False],[False],[False],
-            [False, False, False, True, False],
-            [False, False, False, True, False]]
+               [False, False, False, True, False],
+               [False, False, False, True, False],
+               [False],[False],[False]]
     x, y = 2,2
     rslt = [[False, False, False, False, False, False, False, False],
             [False, False, False, False, False, False, False, False],
