@@ -59,7 +59,7 @@ def fill_matrix(mat,x,y,m=3,n=3):
     
     for i in range(row):
         col = len(mat[i])
-        while col != y+ 2*m:
+        while col != x+ 2*m:
             mat[i].append(False)
             col = len(mat[i])
     return mat

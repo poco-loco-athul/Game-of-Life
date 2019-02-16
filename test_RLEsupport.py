@@ -48,7 +48,7 @@ def test_fill_matrix():
 
 def test_decode():
     RLE_value ="2b3o3b3o2b2$o4bobo4bo"
-    x, y = 3, 13
+    x, y = 13, 3
     rst = [[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
            [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
            [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
