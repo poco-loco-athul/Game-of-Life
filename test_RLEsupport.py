@@ -28,7 +28,10 @@ def test_expand_matrix():
     
     
 def test_fill_matrix():
-    value =  [[True, False],[True, False]]
+    value =   [[False],[False],[False],
+            [False, False, False, True, False],
+            [False, False, False, True, False]]
+    x, y = 2,2
     rslt = [[False, False, False, False, False, False, False, False],
             [False, False, False, False, False, False, False, False],
             [False, False, False, False, False, False, False, False],
@@ -37,5 +40,5 @@ def test_fill_matrix():
             [False, False, False, False, False, False, False, False],
             [False, False, False, False, False, False, False, False],
             [False, False, False, False, False, False, False, False]]
-    pass
+    assert RLEsupport.fill_matrix(value,x,y) == rslt
     
