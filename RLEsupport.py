@@ -58,10 +58,11 @@ def fill_matrix(mat,x,y,m=3,n=3):
     row = len(mat)
     
     for i in range(row):
-        col = len(mat[i])
-        while col != x+ 2*m:
-            mat[i].append(False)
+        while True:
             col = len(mat[i])
+            if col == x +2*m:
+                break
+            mat[i].append(False)
     return mat
 
 
