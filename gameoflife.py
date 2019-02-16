@@ -1,11 +1,15 @@
 # Conway's Game of Life
+#
+# Initial configuration for game of life given through a matrix. Each element in the matrix is defined as a cell.
+
 
 def existential_check(a,b,row,col): 
-    "Checks whether the calling neighbour(a,b) exists or not"
+    "Checks whether the calling cell(a,b) exists or not. This helps neighbour_finder() stay inside the given matrix. "
     if a in range(row) and b in range(col):    
         return True
     else:
         return False
+    
 
 def neighbour_finder(grid):
     "neighbour_finder() finds number of alive cells for each cells (dead or alive)"
@@ -17,8 +21,9 @@ def neighbour_finder(grid):
     for i in range(rows):
         for j in range(cols):
             count = 0
-            #Counting:
-            if existential_check(i-1,j-1,rows,cols):
+            # A cell can have 8 possible neighbours
+            # if cell exists, if cell is alive, count increments
+            if existential_check(i-1,j-1,rows,cols): 
                 if grid[i-1][j-1]:
                     count += 1
             if existential_check(i-1,j,rows,cols):
@@ -51,14 +56,16 @@ def neighbour_finder(grid):
 
 
 def apply_rules(grd,neighbour):
+    "Applies Coway's rules and produces next generation"
     rows = len(grd)
     cols = len(grd[0])    
-    "Applies Coway's rules and produces next generation"
     for i in range(rows):
         for j in range(cols):
+            # Rules 1,2 and 3
             if grd[i][j]:
                 if neighbour[i][j] not in range(2,4):
                     grd[i][j] = False
+            # Rule 4        
             if not grd[i][j]:
                 if neighbour[i][j] == 3:
                     grd[i][j] = True
@@ -66,9 +73,9 @@ def apply_rules(grd,neighbour):
 
                     
 def display(grd):
+    "Displays given grid(matrix) as a string"
     rows = len(grd)
     cols = len(grd[0])    
-    "Displays given grid(matrix) as string"
     formatter = ""
     for i in range(rows):
         formatter += "\t\n"
