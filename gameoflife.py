@@ -13,7 +13,7 @@ def neighbour_finder(grid):
     rows = len(grid)
     cols = len(grid[0])
 
-    result = [[None for i in range(rows)] for j in range(cols)]
+    result = [[None for i in range(cols)] for j in range(rows)]
     
     for i in range(rows):
         for j in range(cols):
