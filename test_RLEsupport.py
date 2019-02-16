@@ -14,6 +14,6 @@ def test_RLE_to_string():
 
 
 def test_string_to_matrix():
-    value =  "True False; True False"
+    value =  "True False ;True False"
     rslt  = [[True, False],[True, False]]
     assert RLEsupport.string_to_matrix(value) == rslt
