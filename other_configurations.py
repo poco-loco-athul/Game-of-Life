@@ -4,6 +4,15 @@ from gameoflife import *
 from time import sleep
 
 
+# More patterns are available in ConwayLife.com. Use RLE file format from patterns
+# Simulation only follows Conways original rules
+
+# Simulation runs on finite grid, so choose your patterns carfully
+# To expand the grid increase the value of m (for more col) and n (for more row)
+
+
+
+# Patterns:
 
 # 1. Block (still life)
 # rle = "2o$2o!"
@@ -30,9 +39,9 @@ x,y = 11, 11
 # x,y = 13,13
 
 # 7. Pentadecathlon (Oscillator)(Period=15)
-rle ="2bo4bo2b$2ob4ob2o$2bo4bo!"
-x = 10
-y = 3
+# rle ="2bo4bo2b$2ob4ob2o$2bo4bo!"
+# x = 10
+# y = 3
 
 
 def draw(value, window):
@@ -41,7 +50,7 @@ def draw(value, window):
 
 def main(window):
     curses.curs_set(0)
-    grid = RLEsupport.decode(rle,x,y) #input
+    grid = RLEsupport.decode(rle,x,y,m=3, n=3) #input
     
     try:
         while True:
