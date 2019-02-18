@@ -13,3 +13,8 @@ def display_curses(grd, r=5):
             else:
                 output[(i+r,j+r)] = "."
     return output
+
+
+def draw(value, window):
+    for (row, col), char in value.items():
+        window.addch(row, col, char)
