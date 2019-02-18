@@ -1,6 +1,9 @@
+import RLEsupport
+import curses
+from curses_support import *
 from gameoflife import *
 from time import sleep
-import RLEsupport
+
 
 
 # 1. Block (still life)
@@ -34,13 +37,24 @@ y = 3
 
 
 
+def main(window):
+    curses.curs_set(0)
+    grid = RLEsupport.decode(rle,x,y) #input
+    
+    try:
+        while True:
+            window.clear()
+            gd = display_curses(grid)
+            draw(gd, window)
+            grid = apply_rules(grid, neighbour_finder(grid))
+            window.refresh()
+            sleep(0.5)
+    except KeyboardInterrupt:
+        pass
 
-grid = RLEsupport.decode(rle,x,y)
-try:
-    while True:
-        print(display(grid))
-        sleep(0.5)
-        apply_rules(grid, neighbour_finder(grid))
 
-except KeyboardInterrupt:
-    print('\ninterrupted!')
+
+if __name__ == "__main__":
+    curses.wrapper(main)
+
+
