@@ -12,7 +12,6 @@ def neighbour_finder(grid):
     "neighbour_finder() finds number of neighbouring alive cells for each cell"
     rows = len(grid)
     cols = len(grid[0])
-
     result = [[None for i in range(cols)] for j in range(rows)]
     
     for i in range(rows):
@@ -20,35 +19,12 @@ def neighbour_finder(grid):
             count = 0
             # A cell can have 8 possible neighbours
             # if cell exists, if cell is alive, count increments
-            if existential_check(i-1,j-1,rows,cols): 
-                if grid[i-1][j-1]:
-                    count += 1
-            if existential_check(i-1,j,rows,cols):
-                if grid[i-1][j]:
-                    count += 1
-            if existential_check(i-1,j+1,rows,cols):
-                if grid[i-1][j+1]:
-                    count += 1
-
-            if existential_check(i,j-1,rows,cols):
-                if grid[i][j-1]:    
-                    count += 1
-            if existential_check(i,j+1,rows,cols):
-                if grid[i][j+1]:    
-                    count += 1
-
-            if existential_check(i+1,j-1,rows,cols):
-                if grid[i+1][j-1]:    
-                    count += 1
-            if existential_check(i+1,j,rows,cols):
-                if grid[i+1][j]:    
-                    count += 1
-            if existential_check(i+1,j+1,rows,cols):
-                if grid[i+1][j+1]:    
-                    count += 1
-
+            cells = [(i-1,j-1), (i-1, j), (i-1,j+1), (i,j-1), (i,j+1), (i+1,j-1), (i+1,j), (i+1,j+1)]
+            for k in cells:
+                if existential_check(k[0],k[1],rows,cols): 
+                    if grid[ k[0] ][ k[1] ]:
+                        count += 1
             result[i][j] = count
-
     return result
 
 
