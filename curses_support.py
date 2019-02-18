@@ -1,3 +1,6 @@
+import curses
+from gameoflife import *
+from time import sleep
 
 
 def display_curses(grd, r=5):
@@ -18,3 +21,17 @@ def display_curses(grd, r=5):
 def draw(value, window):
     for (row, col), char in value.items():
         window.addch(row, col, char)
+
+
+def main(window, grid):
+    curses.curs_set(0)
+    try:
+        while True:
+            window.clear()
+            gd = display_curses(grid)
+            draw(gd, window)
+            grid = apply_rules(grid, neighbour_finder(grid))
+            window.refresh()
+            sleep(0.5)
+    except KeyboardInterrupt:
+        pass
