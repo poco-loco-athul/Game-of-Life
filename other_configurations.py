@@ -1,6 +1,5 @@
 import RLEsupport
 import curses
-from curses_support import *
 from gameoflife import *
 from time import sleep
 
@@ -36,6 +35,9 @@ x = 10
 y = 3
 
 
+def draw(value, window):
+    for (row, col), char in value.items():
+        window.addch(row, col, char)
 
 def main(window):
     curses.curs_set(0)
