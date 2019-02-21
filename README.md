@@ -17,7 +17,7 @@ how it evolves.
 
 Usage
 ======
-Requires python3 or python3.6+. Does not requires `numpy` or other
+Requires python3.x Does not requires `numpy` or other
 packages to run the simulation.
 
 To run [blinker](http://www.conwaylife.com/wiki/Blinker)
@@ -36,9 +36,6 @@ to animated in terminal using `curses` module.
 ```bash
 $ python other_configuration.py
 ```
-
-To run your own configurations change the initial state in
-`try_ur_configuration.py`
 
 End program using a keyboard interrupt (ctrl-c).
 
