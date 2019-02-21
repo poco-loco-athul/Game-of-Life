@@ -14,7 +14,7 @@ try:
     while True:
         print(display(grid))
         sleep(0.5)
-        apply_rules(grid, neighbour_finder(grid))
+        apply_rules(grid, count_of_alive_neighbours(grid))
 
 except KeyboardInterrupt:
-    print('interrupted!')
+    print('\ninterrupted!')

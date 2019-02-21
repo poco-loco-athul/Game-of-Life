@@ -50,14 +50,14 @@ def draw(value, window):
 
 def main(window):
     curses.curs_set(0)
-    grid = RLEsupport.decode(rle,x,y,m=3, n=3) #input
+    grid = RLEsupport.decode(rle, x, y, m = 3, n = 3) #input
     
     try:
         while True:
             window.clear()
             gd = display_curses(grid)
             draw(gd, window)
-            grid = apply_rules(grid, neighbour_finder(grid))
+            grid = apply_rules(grid, count_of_alive_neighbours(grid))
             window.refresh()
             sleep(0.5)
     except KeyboardInterrupt:
