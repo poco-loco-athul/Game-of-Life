@@ -62,7 +62,7 @@ def test_display_curses():
     grid = [ [False, True],
              [True, False] ]
     dsply = { (5,5) : "." , (5,6) : "O",(6,5) : "O", (6,6) : "." }
-    assert gameoflife.display_curses(grid, r=5) == dsply
+    assert gameoflife.display_curses(grid, disp=5) == dsply
     
     
 
